@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
- #   before_action :authenticate_member!
+    before_action :authenticate_user!
 
     def index
         @users = User.all
