@@ -1,1 +1,15 @@
-<h1>Show all of the users</h2>
+<h1>Show all of the users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+    </tr>
+  <% end %>
+</table>
