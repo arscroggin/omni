@@ -256,10 +256,11 @@ Devise.setup do |config|
     # If you want to use other strategies, that are not supported by Devise, or
     # change the failure app, you can configure them inside the config.warden block.
     #
-    # config.warden do |manager|
-    #   manager.intercept_401 = false
-    #   manager.default_strategies(scope: :user).unshift :some_external_strategy
-    # end
+    config.warden do |manager|
+    #  manager.intercept_401 = false
+    #  manager.default_strategies(scope: :user).unshift :some_external_strategy
+      manager.failure_app = CustomFailure
+    end
   
     # ==> Mountable engine configurations
     # When using Devise inside an engine, let's call it `MyEngine`, and this engine
@@ -267,7 +268,7 @@ Devise.setup do |config|
     # The following options are available, assuming the engine is mounted as:
     #
     #     mount MyEngine, at: '/my_engine'
-    #
+    # 
     # The router that invoked `devise_for`, in the example above, would be:
     # config.router_name = :my_engine
     #
@@ -291,8 +292,8 @@ Devise.setup do |config|
       settings.issuer                             = "#{$callback}/users/saml/metadata"
       settings.authn_context                      = ""
       settings.idp_slo_target_url                 = ""
-      settings.idp_sso_target_url                 = "https://dev-304373.oktapreview.com/app/sepdev304373_cbsso_1/exkd9zkqkoswo2jOz0h7/sso/saml"
-      settings.idp_cert_fingerprint               = 'AC:08:C9:88:1B:30:C1:C6:8F:2E:17:AA:96:D5:79:E6:BF:65:B2:6B:44:3F:39:8C:DC:D2:FA:B8:9E:29:63:BA'
+      settings.idp_sso_target_url                 = 'https://dev-304373.oktapreview.com/app/sepdev304373_cbsso_1/exkd9zkqkoswo2jOz0h7/sso/saml'
+      settings.idp_cert_fingerprint               = '79:AF:23:CC:D0:0D:6F:3C:7A:B1:E0:4F:72:AC:D7:4C:5F:E0:68:EA:F6:39:4B:19:EF:0E:EE:64:8E:76:EF:2B'
       settings.idp_cert_fingerprint_algorithm     = 'http://www.w3.org/2000/09/xmldsig#sha256'
     end
   end
