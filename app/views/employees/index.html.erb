@@ -1,5 +1,13 @@
-<h1>Show all of the users</h1>
+<h1>All Users</h1>
+<h2>Current User</h2>
 
+<p>Name: <%= @user.name %></p>
+<p>ID: <%= @user.id %></p>
+<p>Email: <%= @user.email%></p>
+</br>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
+<h2>All User</h2>
 <table>
   <tr>
     <th>Name</th>
@@ -17,4 +25,3 @@
 </br>
 </br>
 
-<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
