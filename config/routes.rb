@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     root :to => 'employees#index'
   end
 
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users
  
   resources :employees
   end
