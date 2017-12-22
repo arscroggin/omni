@@ -8,16 +8,22 @@
 <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 
 <h2>All User</h2>
-<table boarder="1">
+<table border="1">
   <tr>
     <th>Name</th>
     <th>Email</th>
+    <th>Organization</th>
   </tr>
  
   <% @users.each do |user| %>
     <tr>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
+      <% if user.organization.nil? %>
+        <td></td>
+      <% else %>
+        <td><%= user.organization.name %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
