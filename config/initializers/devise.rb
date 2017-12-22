@@ -291,7 +291,7 @@ Devise.setup do |config|
       settings.name_identifier_format             = "urn:oasis:names:tc:SAML:2.0:nameid-format:transient"
       settings.issuer                             = "#{$callback}/users/saml/metadata"
       settings.authn_context                      = ""
-      settings.idp_slo_target_url                 = ""
+      settings.idp_slo_target_url                 = 'https://dev-304373.oktapreview.com/login/default'
       settings.idp_sso_target_url                 = 'https://dev-304373.oktapreview.com/app/sepdev304373_cbsso_1/exkd9zkqkoswo2jOz0h7/sso/saml'
       settings.idp_cert_fingerprint               = '79:AF:23:CC:D0:0D:6F:3C:7A:B1:E0:4F:72:AC:D7:4C:5F:E0:68:EA:F6:39:4B:19:EF:0E:EE:64:8E:76:EF:2B'
       settings.idp_cert_fingerprint_algorithm     = 'http://www.w3.org/2000/09/xmldsig#sha256'
