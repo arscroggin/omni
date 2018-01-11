@@ -12,6 +12,8 @@ class SamlSessionsController < Devise::SamlSessionsController
 
         if org != nil
           org.users << user
+        else
+          flash[:notice] = "Your account is not associated with any organizations."
         end
 
       end
