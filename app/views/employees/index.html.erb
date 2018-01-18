@@ -13,6 +13,7 @@
     <th>Name</th>
     <th>Email</th>
     <th>Organization</th>
+    <th></th>
   </tr>
  
   <% @users.each do |user| %>
@@ -21,8 +22,10 @@
       <td><%= user.email %></td>
       <% if user.organization.nil? %>
         <td></td>
+        <td></td>
       <% else %>
         <td><%= user.organization.name %></td>
+        <td><%= link_to 'Edit', edit_organization_path(user.organization.id) %></td>
       <% end %>
     </tr>
   <% end %>

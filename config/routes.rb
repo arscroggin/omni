@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { saml_sessions: "saml_sessions"}
 
   resources :employees, only: [:index, :show]
+
+  resources :organizations, only: [:edit, :show]
+
   end
